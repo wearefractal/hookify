@@ -1,6 +1,6 @@
 async = require 'async'
 
-class Hookable
+class hookify
   constructor: ->
     @pres = {}
     @posts = {}
@@ -35,4 +35,4 @@ class Hookable
     async.forEachSeries @posts[evt], run, cb
     return @
 
-module.exports = Hookable
+module.exports = hookify

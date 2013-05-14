@@ -1,11 +1,11 @@
-Hookable = require '../'
+hookify = require '../'
 should = require 'should'
 require 'mocha'
 
-describe 'hookable', ->
+describe 'hookify', ->
   describe 'constructor', ->
     it 'should create', (done) ->
-      test = new Hookable
+      test = new hookify
       should.exist test
       should.exist test.pres
       should.exist test.posts
@@ -13,7 +13,7 @@ describe 'hookable', ->
 
   describe 'pre', ->
     it 'should add a listener', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -29,7 +29,7 @@ describe 'hookable', ->
       done()
 
     it 'should remove a listener', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -46,7 +46,7 @@ describe 'hookable', ->
       done()
 
     it 'should call a listener when triggered', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -61,7 +61,7 @@ describe 'hookable', ->
         done()
 
     it 'should call multiple listeners when triggered', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -77,7 +77,7 @@ describe 'hookable', ->
         done()
 
     it 'should call not run listeners after error', (done) ->
-      test = new Hookable
+      test = new hookify
       run = false
       handlerFn = (num, othernum, next) ->
         throw "Run twice!" if run is true
@@ -98,7 +98,7 @@ describe 'hookable', ->
 
   describe 'post', ->
     it 'should add a listener', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -114,7 +114,7 @@ describe 'hookable', ->
       done()
 
     it 'should remove a listener', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -131,7 +131,7 @@ describe 'hookable', ->
       done()
 
     it 'should call a listener when triggered', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -146,7 +146,7 @@ describe 'hookable', ->
         done()
 
     it 'should call multiple listeners when triggered', (done) ->
-      test = new Hookable
+      test = new hookify
       handlerFn = (num, othernum, next) ->
         should.exist num
         should.exist othernum
@@ -162,7 +162,7 @@ describe 'hookable', ->
         done()
 
     it 'should call not run listeners after error', (done) ->
-      test = new Hookable
+      test = new hookify
       run = false
       handlerFn = (num, othernum, next) ->
         throw "Run twice!" if run is true

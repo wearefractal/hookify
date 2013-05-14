@@ -1,9 +1,9 @@
 {
-   "name":"hookable",
+   "name":"hookify",
    "description":"Middleware everything",
    "version":"0.0.1",
-   "homepage":"http://github.com/wearefractal/hookable",
-   "repository":"git://github.com/wearefractal/hookable.git",
+   "homepage":"http://github.com/wearefractal/hookify",
+   "repository":"git://github.com/wearefractal/hookify.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
    "main":"./index.js",
    
@@ -24,7 +24,7 @@
    "licenses":[
       {
          "type":"MIT",
-         "url":"http://github.com/wearefractal/hookable/raw/master/LICENSE"
+         "url":"http://github.com/wearefractal/hookify/raw/master/LICENSE"
       }
    ]
 }

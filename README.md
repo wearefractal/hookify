@@ -1,10 +1,10 @@
-![status](https://secure.travis-ci.org/wearefractal/hookable.png?branch=master)
+![status](https://secure.travis-ci.org/wearefractal/hookify.png?branch=master)
 
 ## Information
 
 <table>
 <tr> 
-<td>Package</td><td>hookable</td>
+<td>Package</td><td>hookify</td>
 </tr>
 <tr>
 <td>Description</td>
@@ -19,9 +19,9 @@
 ## Usage
 
 ```coffee-script
-Hookable = require 'hookable'
+hookify = require 'hookify'
 
-class Dog extends Hookable
+class Dog extends hookify
 
   walk: (distance, cb) ->
     @runPre 'walk', [distance], (err) ->
