@@ -1,14 +1,14 @@
-![status](https://secure.travis-ci.org/wearefractal/APPNAME.png?branch=master)
+![status](https://secure.travis-ci.org/wearefractal/hookable.png?branch=master)
 
 ## Information
 
 <table>
 <tr> 
-<td>Package</td><td>APPNAME</td>
+<td>Package</td><td>hookable</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>DESCRIPTIONHERE</td>
+<td>Middleware everything</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -19,7 +19,33 @@
 ## Usage
 
 ```coffee-script
-NOTHING HERE YET
+Hookable = require 'hookable'
+
+class Dog extends Hookable
+
+  walk: (distance, cb) ->
+    @runPre 'walk', [distance], (err) ->
+      return cb err if err?
+      # walk the dog
+      @runPost 'walk', [distance], (err) ->
+        return cb err if err?
+        cb()
+```
+
+```coffee-script
+sparky = new Dog
+
+sparky.pre 'walk', (distance, next) ->
+  # do stuff
+  next()
+
+sparky.post 'walk', (distance, next) ->
+  sparky.drink()
+  next()
+
+sparky.walk (err) ->
+  # err is an argument passed to next() in a middleware
+
 ```
 
 ## LICENSE
